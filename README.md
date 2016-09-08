@@ -41,10 +41,10 @@ NOTE: Be sure to update refresh_token.sh with your CLIENT_ID and CLIENT_SECRET
 
 I setup the refresh_token.sh to run every hour in cron, then I don't worry about it again.
 
-Note: The steps 1-7 above should only be needed once.  The refresh_token should be able to keep an active token from that point on.
+<b>Note:</b> The steps 1-7 above should only be needed once.  The refresh_token should be able to keep an active token from that point on.
 
-Sample:
+<h2>Sample:</h2>
 ./alexa.sh "Tell me a joke"
 
-Troubleshooting:
+<h2>Troubleshooting:</h2>
 Look at the various log files for errors.  Also, I 'tee' out the audio sent and audio response.
