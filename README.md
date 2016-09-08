@@ -1,6 +1,9 @@
 # AlexaNotificationCurl
 Some curl scripts to allow interfacing with Alexa using text as input.
 
+<h2>Demo</h2>
+<a href="https://youtu.be/WLPApYslQVM">https://youtu.be/WLPApYslQVM</a>
+
 I'm using this along with OpenCV to do face recognition and then let me know who is at the front door:
 "Simon says, Joe is at the front door."
 
