@@ -20,10 +20,10 @@ Motivated by Miguel Mota
 <h2>Requirements:</h2>
 You will need
 - curl
-- sox
-- espeak
-- pico2wav
-NOTE: You could change the alexa.sh to use a different speach module, but I've found pico2wav to be pretty good.
+- sox (Ubuntu packages: sox libsox-fmt-mp3)
+- pico2wav (Ubuntu package: libttspico-utils)
+- espeak (Not used in current version)
+NOTE: You could change the alexa.sh to use a different speech module, but I've found pico2wav to be pretty good.
 
 <h2>How to use:</h2>
 
