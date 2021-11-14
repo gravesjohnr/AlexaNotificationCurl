@@ -19,16 +19,23 @@ METADATA_CONTENT_TYPE="Content-Type: application/json; charset=UTF-8";
 
 # Metadata JSON body.
 METADATA="{\
-\"messageHeader\": {},\
-\"messageBody\": {\
-\"profile\": \"alexa-close-talk\",\
-\"locale\": \"en-us\",\
-\"format\": \"audio/L16; rate=16000; channels=1\"\
+\"context\":[],
+\"event\":{\
+\"header\": {\
+\"namespace\": \"SpeechRecognizer\",\
+\"name\": \"Recognize\",\
+\"messageId\": \"MESSAGE_ID_1233\",\
+\"dialogRequestId\": \"DIALOAG_ID_1233\"\
+},\
+\"payload\": {\
+\"profile\": \"CLOSE_TALK\",\
+\"format\": \"AUDIO_L16_RATE_16000_CHANNELS_1\"\
+}\
 }\
 }"
 
 # Audio headers.
-AUDIO_CONTENT_TYPE="Content-Type: audio/L16; rate=16000; channels=1";
+AUDIO_CONTENT_TYPE="Content-Type: application/octet-stream";
 AUDIO_CONTENT_DISPOSITION="Content-Disposition: form-data; name=\"audio\"";
 
 ############################################################
@@ -80,6 +87,6 @@ curl -s -X POST \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: multipart/form-data; boundary=${BOUNDARY}" \
   --data-binary @multipart_body.txt \
-  https://access-alexa-na.amazon.com/v1/avs/speechrecognizer/recognize \
+  https://avs-alexa-na.amazon.com/v20160207/events \
   | perl -pe 'BEGIN{undef $/;} s/--.*Content-Type: audio\/mpeg.*(ID3.*)--.*--/$1/smg' \
   | tee response.mp3 | play -t mp3 -q -
